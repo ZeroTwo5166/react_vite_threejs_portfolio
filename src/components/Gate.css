@@ -1,0 +1,65 @@
+*
+{
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body
+{
+    height: 100vh;
+    font-family: 'Poppins';
+    color: white;
+    overflow: hidden;
+}
+
+.webgl
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    outline: none;
+}
+
+.container {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    place-content: center;
+}
+
+.content{
+    display: flex;
+    gap: 5em;
+    width: 100%;
+    padding-top: 3em;
+    position: absolute;
+    z-index: 1;
+    margin-left: 35vw;
+    animation: fadeInAnimation ease 3s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+h3 {
+    color: white;
+}
+
+h3:hover{
+    cursor: pointer;
+}
+
+
+
+
+
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+     }
+}
