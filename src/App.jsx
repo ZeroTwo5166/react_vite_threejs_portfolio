@@ -1,62 +1,43 @@
-import { useState, useEffect } from 'react'
-import './App.css'
-import Home from './components/Home'
+import { useState } from 'react';
+import { BrowserRouter } from 'react-router-dom'
+import {About, Contact, Experience, Feedbacks, Hero, Navbar, Tech, Works, StarsCanvas} from './components'
+import Gate from './components/Gate';
+
 
 function App() {
+  const [showFirstComponent, setShowFirstComponent] = useState(true);
+  const [showSecondComponent, setShowSecondComponent] = useState(false);
 
-  useEffect(() => {
-    
-  }, [])
+  const handleFirstComponentDelete = () => {
+    setShowFirstComponent(false);
+    setShowSecondComponent(true);
+  };
 
   return (
    <div>
-     <Home />
+     {showFirstComponent && (<Gate onDelete={handleFirstComponentDelete}/>)}
+     {showSecondComponent && <BrowserRouter>
+        <div className='relative z-0 bg-primary'>
+          <div className='bg-hero-pattern bg-cover
+          bg-no-repeat bg-center'>
+            <Navbar/>
+            <Hero/>
+          </div>
+          <About/>
+          <Experience/>
+          <Tech />
+          <Works />
+          <Feedbacks />
+          <div className='relative z-0'>
+            <Contact />
+            <StarsCanvas />
+          </div>
+        </div>
+     </BrowserRouter>}
+
+     
    </div>
   )
 }
 
 export default App
-
-/*const scene = new THREE.Scene();
-
-    const camera = new THREE.PerspectiveCamera(50,window.innerWidth/window.innerHeight, 1,1000)
-
-    camera.position.z = 96;
-
-    const canvas = document.getElementById("myThreeJsCanvas");
-
-    const renderer = new THREE.WebGLRenderer({canvas,
-            antialias: true
-    })
-
-    renderer.setSize(window.innerWidth, window.innerHeight);
-    document.body.appendChild(renderer.domElement);
-
-
-    const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
-    ambientLight.castShadow = true;
-    scene.add(ambientLight);
-
-    const spotLight = new THREE.SpotLight(0xffffff, 1);
-    spotLight.castShadow = true;
-    spotLight.position.set(0,64,32);
-    scene.add(spotLight);
-
-
-    const boxGeometry = new THREE.BoxGeometry(16,16,16);
-    const boxMaterial = new THREE.MeshNormalMaterial();
-    const boxMesh = new THREE.Mesh(boxGeometry, boxMaterial);
-    scene.add(boxMesh);
-
-
-
-    const animate = () => {
-      boxMesh.rotation.x += 0.02;
-      boxMesh.rotation.y += 0.02;
-      renderer.render(scene, camera);
-      window.requestAnimationFrame(animate);
-
-    }
-
-    animate();
- */

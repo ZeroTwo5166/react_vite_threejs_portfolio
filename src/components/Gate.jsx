@@ -149,14 +149,15 @@ function Gate( {onDelete}) {
 
     const enterHome = () => {
         check();
+        setTimeout(onDelete, 1500);
     }
     const check = () => hasRun.current = 1;
+
             return ( 
                 <div className='container'>
                     <div className='content' ref={hasRun}>
                         <h1>The Next <br/>Dimension</h1>
-                        <h3 onClick={enterHome}>Enter</h3>
-                        <button onClick={onDelete}></button>
+                        <h3 onClick={enterHome} className='text-red-600'>Enter</h3>
                     </div>
                     <canvas className="webgl"></canvas>  
                 </div>                 

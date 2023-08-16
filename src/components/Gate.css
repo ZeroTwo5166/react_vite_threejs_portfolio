@@ -37,10 +37,14 @@ body
     padding-top: 3em;
     position: absolute;
     z-index: 1;
-    margin-left: 35vw;
     animation: fadeInAnimation ease 3s;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-size: larger;
+    margin-left: 10%;
 }
 
 h3 {
