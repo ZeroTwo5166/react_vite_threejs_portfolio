@@ -1,7 +1,7 @@
 import React, { Suspense } from 'react'
 import { useEffect, useState} from 'react'
 import { Canvas } from '@react-three/fiber'
-import { OrbitControls, Preload, useGLTF } from '@react-three/drei'
+import { Loader, OrbitControls, Preload, useGLTF } from '@react-three/drei'
 import CanvasLoader from '../Loader'
 
 
@@ -50,7 +50,7 @@ const ComputersCanvas = () => {
 
   return (
     <>
-      <Canvas
+        <Canvas
         frameloop='demand'
         shadows
         camera={{ position: [20, 3, 5], fov: 25 }}
@@ -66,8 +66,7 @@ const ComputersCanvas = () => {
         </Suspense>
 
         <Preload all />
-      </Canvas>
-      
+      </Canvas>       
     </>
     
   )

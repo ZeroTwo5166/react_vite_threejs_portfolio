@@ -1,29 +1,26 @@
 import {
     mobile,
     backend,
-    creator,
     web,
     javascript,
     typescript,
     html,
     css,
     reactjs,
-    redux,
     tailwind,
     nodejs,
-    mongodb,
     git,
-    figma,
-    docker,
-    meta,
-    starbucks,
-    tesla,
-    shopify,
-    carrent,
-    jobit,
-    tripguide,
+    robofriend,
+    starwars,
+    gameDatabase,
     threejs,
+    tec,
+    angular,
+    mssql,
+    cSharp,
+    kali
   } from "../assets";
+
   
   export const navLinks = [
     {
@@ -46,17 +43,13 @@ import {
       icon: web,
     },
     {
-      title: "React Native Developer",
-      icon: mobile,
-    },
-    {
       title: "Backend Developer",
       icon: backend,
     },
     {
-      title: "Content Creator",
-      icon: creator,
-    },
+      title: "Desktop App Developer",
+      icon: mobile,
+    }
   ];
   
   const technologies = [
@@ -81,8 +74,8 @@ import {
       icon: reactjs,
     },
     {
-      name: "Redux Toolkit",
-      icon: redux,
+      name: "Angular JS",
+      icon: angular,
     },
     {
       name: "Tailwind CSS",
@@ -93,138 +86,120 @@ import {
       icon: nodejs,
     },
     {
-      name: "MongoDB",
-      icon: mongodb,
+      name: "MSSQL",
+      icon: mssql,
     },
     {
       name: "Three JS",
       icon: threejs,
     },
     {
-      name: "git",
+      name: "Git",
       icon: git,
     },
     {
-      name: "figma",
-      icon: figma,
+      name: "C#",
+      icon: cSharp,
     },
     {
-      name: "docker",
-      icon: docker,
+      name: "Kali",
+      icon: kali,
     },
   ];
   
-  const experiences = [
+  const experiences = [{
+    title: "C# (.NET Framework, .NET Core, ASP.NET, WPF)",
+    company_name: "TEC P1",
+    icon: tec,
+    iconBg: "#E6DEDD",
+    date: "Jan 2021 - July 2022",
+    points: [
+      "Worked with console apps from basic functionality to retrieving and displaying datas from SQL database",
+      "Worked with ASP.NET Core Web App MVC to create fullstack web applications with MSSQL Database",
+      "Created numerous API with .NET Core Web API.",
+      "Have experience with creating WPF and Winforms applications",
+    ],
+  },
     {
-      title: "React.js Developer",
-      company_name: "Starbucks",
-      icon: starbucks,
+      title: "React.js",
+      company_name: "TEC P2",
+      icon: tec,
       iconBg: "#383E56",
-      date: "March 2020 - April 2021",
+      date: "August 2022 - June 2023",
       points: [
         "Developing and maintaining web applications using React.js and other related technologies.",
-        "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
+        "Created React apps with implementation of RESTful API",
         "Implementing responsive design and ensuring cross-browser compatibility.",
-        "Participating in code reviews and providing constructive feedback to other developers.",
+        "Decent knowledge of using threejs with React"
       ],
     },
+    
     {
-      title: "React Native Developer",
-      company_name: "Tesla",
-      icon: tesla,
-      iconBg: "#E6DEDD",
-      date: "Jan 2021 - Feb 2022",
-      points: [
-        "Developing and maintaining web applications using React.js and other related technologies.",
-        "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-        "Implementing responsive design and ensuring cross-browser compatibility.",
-        "Participating in code reviews and providing constructive feedback to other developers.",
-      ],
-    },
-    {
-      title: "Web Developer",
-      company_name: "Shopify",
-      icon: shopify,
+      title: "Angular.js",
+      company_name: "TEC P3",
+      icon: tec,
       iconBg: "#383E56",
-      date: "Jan 2022 - Jan 2023",
+      date: "July 2023 - now",
       points: [
-        "Developing and maintaining web applications using React.js and other related technologies.",
-        "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-        "Implementing responsive design and ensuring cross-browser compatibility.",
-        "Participating in code reviews and providing constructive feedback to other developers.",
-      ],
-    },
-    {
-      title: "Full stack Developer",
-      company_name: "Meta",
-      icon: meta,
-      iconBg: "#E6DEDD",
-      date: "Jan 2023 - Present",
-      points: [
-        "Developing and maintaining web applications using React.js and other related technologies.",
-        "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-        "Implementing responsive design and ensuring cross-browser compatibility.",
-        "Participating in code reviews and providing constructive feedback to other developers.",
+        "Decent knowledge in Typescript",
+        "Recently started working on Angular projects"
       ],
     },
   ];
   
-  const testimonials = [
-    {
-      testimonial:
-        "I thought it was impossible to make a website as beautiful as our product, but Rick proved me wrong.",
-      name: "Sara Lee",
-      designation: "CFO",
-      company: "Acme Co",
-      image: "https://randomuser.me/api/portraits/women/4.jpg",
-    },
-    {
-      testimonial:
-        "I've never met a web developer who truly cares about their clients' success like Rick does.",
-      name: "Chris Brown",
-      designation: "COO",
-      company: "DEF Corp",
-      image: "https://randomuser.me/api/portraits/men/5.jpg",
-    },
-    {
-      testimonial:
-        "After Rick optimized our website, our traffic increased by 50%. We can't thank them enough!",
-      name: "Lisa Wang",
-      designation: "CTO",
-      company: "456 Enterprises",
-      image: "https://randomuser.me/api/portraits/women/6.jpg",
-    },
-  ];
   
   const projects = [
     {
-      name: "Car Rent",
+      name: "Robo Friends",
       description:
-        "Web-based platform that allows users to search, book, and manage car rentals from various providers, providing a convenient and efficient solution for transportation needs.",
+        "A beginner-friendly, responsive and fun web app that allows users to filter through the robots.",
       tags: [
         {
           name: "react",
           color: "blue-text-gradient",
         },
         {
-          name: "mongodb",
+          name: "restapi",
           color: "green-text-gradient",
         },
         {
-          name: "tailwind",
+          name: "tachyons",
           color: "pink-text-gradient",
         },
       ],
-      image: carrent,
-      source_code_link: "https://github.com/",
+      image: robofriend,
+      source_code_link: "https://github.com/ZeroTwo5166/robofriends",
+      demo_link: "https://zerotwo5166.github.io/robofriends/"
     },
     {
-      name: "Job IT",
+      name: "Starwars",
       description:
-        "Web application that enables users to search for job openings, view estimated salary ranges for positions, and locate available jobs based on their current location.",
+        "A cool website for Starwars fans that has all the information about people, planets, vehicles, etc.",
       tags: [
         {
-          name: "react",
+          name: "vanillaJS",
+          color: "blue-text-gradient",
+        },
+        {
+          name: "restapi",
+          color: "green-text-gradient",
+        },
+        {
+          name: "css",
+          color: "pink-text-gradient",
+        },
+      ],
+      image: starwars,
+      source_code_link: "https://github.com/ZeroTwo5166/Starwars_api",
+      demo_link: "https://zerotwo5166.github.io/Starwars_api/",
+    },
+    {
+      name: "Game Database",
+      description:
+        "An angular website that has informations and images of more than 500000+ games!!!",
+      tags: [
+        {
+          name: "angular",
           color: "blue-text-gradient",
         },
         {
@@ -236,30 +211,10 @@ import {
           color: "pink-text-gradient",
         },
       ],
-      image: jobit,
-      source_code_link: "https://github.com/",
-    },
-    {
-      name: "Trip Guide",
-      description:
-        "A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.",
-      tags: [
-        {
-          name: "nextjs",
-          color: "blue-text-gradient",
-        },
-        {
-          name: "supabase",
-          color: "green-text-gradient",
-        },
-        {
-          name: "css",
-          color: "pink-text-gradient",
-        },
-      ],
-      image: tripguide,
-      source_code_link: "https://github.com/",
+      image: gameDatabase,
+      source_code_link: "https://github.com/ZeroTwo5166/ng_game_database",
+      demo_link: "https://zerotwo5166.github.io/ng_game_database/"
     },
   ];
   
-  export { services, technologies, experiences, testimonials, projects };
+  export { services, technologies, experiences, projects };
