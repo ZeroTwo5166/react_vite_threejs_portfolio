@@ -196,7 +196,7 @@ import {
     {
       name: "Game Database",
       description:
-        "An angular website that has informations and images of more than 500000+ games!!!",
+        "An angular website that has adequate informations and images of more than 500000+ games!!!",
       tags: [
         {
           name: "angular",

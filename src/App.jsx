@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import { BrowserRouter } from 'react-router-dom'
-import {About, Contact, Experience, Feedbacks, Hero, Navbar, Tech, Works, StarsCanvas} from './components'
+import {About, Contact, Experience, Hero, Navbar, Tech, Works, StarsCanvas} from './components'
 import Gate from './components/Gate';
+import CatBg from './components/CatBg';
 
 
 function App() {
@@ -13,6 +14,12 @@ function App() {
     setShowSecondComponent(true);
   };
 
+  const [nyanStateFromNavbar, setNyanStateFromNavbar] = useState();
+
+  const handleNyanStateFromNavbar = nyanState => {
+    setNyanStateFromNavbar(nyanState);
+  }
+
   return (
    <div>
      {showFirstComponent && (<Gate onDelete={handleFirstComponentDelete}/>)}
@@ -20,17 +27,20 @@ function App() {
         <div className='relative z-0 bg-primary'>
           <div className='bg-hero-pattern bg-cover
           bg-no-repeat bg-center'>
-            <Navbar/>
+            <Navbar nyanStateToParent={handleNyanStateFromNavbar}/>
             <Hero/>
           </div>
           <About/>
           <Experience/>
           <Tech />
           <Works />
-          <Feedbacks />
           <div className='relative z-0'>
             <Contact />
-            <StarsCanvas />
+            <StarsCanvas/>
+          </div>
+          <div>
+            <CatBg nyanStateFromParent={nyanStateFromNavbar}/>
+
           </div>
         </div>
      </BrowserRouter>}

@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-
 import { styles } from "../styles";
 import { navLinks } from "../constants";
 import { logo, menu, close } from "../assets";
 
-const Navbar = () => {
+const Navbar = ({nyanStateToParent}) => {
   const [active, setActive] = useState("");
   const [toggle, setToggle] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [nyanClicked, setNyanClicked] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -25,6 +25,8 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+
+
   return (
     <nav
       className={`${
@@ -33,7 +35,16 @@ const Navbar = () => {
         scrolled ? "bg-primary" : "bg-transparent"
       }`}
     >
+      
       <div className='w-full flex justify-between items-center max-w-7xl mx-auto'>
+      <button className={nyanClicked ? "bg-green-500 text-white font-bold py-2 px-4 rounded mr-2":
+      "bg-red-500 text-white font-bold py-2 px-4 rounded mr-2" }
+      onClick={() => {
+        const updatedNyanClick = !nyanClicked;
+        setNyanClicked(updatedNyanClick)
+        nyanStateToParent(updatedNyanClick);
+      }}
+    >{nyanClicked ? "Nyan Mode: On" : "Nyan Mode: Off"}</button>
         <Link
           to='/'
           className='flex items-center gap-2'
@@ -48,6 +59,7 @@ const Navbar = () => {
             <span className='sm:block hidden'> | 02</span>
           </p>
         </Link>
+       
 
         <ul className='list-none hidden sm:flex flex-row gap-10'>
           {navLinks.map((nav) => (
