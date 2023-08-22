@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@900&display=swap');
+
+
+
+.ulList {
+  position: relative;
+  display: flex;
+    flex-wrap: wrap;
+}
+
+.liList {
+  list-style: none;
+}
+
+
+input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 80px;
+  width: 80px;
+  z-index: 100;
+}
+
+.letters {
+  position: relative;
+  height: 80px;
+  width: 80px;
+  background: #18191f;
+  color: #555;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 46px;
+  cursor: pointer;
+  margin: 0 4px;
+  border-radius: 20px;
+  box-shadow: -1px -1px 4px rgba(255, 255, 255, 0.05),
+    4px 4px 6px rgba(0, 0, 0, 0.2),
+    inset -1px -1px 4px rgba(255, 255, 255, 0.05),
+    inset 1px 1px 1px rgba(0, 0, 0, 0.1);
+}
+
+input[type="checkbox"]:checked ~ div {
+  box-shadow: inset 0 0 2px rgba(255, 255, 255, 0.05),
+    inset 4px 4px 6px rgba(0, 0, 0, 0.2);
+  color: yellow;
+  text-shadow: 0 0 15px yellow, 0 0 25px yellow;
+  animation: glow 1.5s linear infinite;
+}
+
+.wrapper {
+  display: flex;
+}
+
+.wrapper .static-txt {
+  color: #fff;
+  font-size: 40px;
+  font-weight: 400;
+  margin-top: 13px;
+  margin-right: 10px;
+}
+
+.wrapper .dynamic-txts {
+  margin-left: 20px;
+  height: 90px;
+  line-height: 90px;
+  overflow: hidden;
+}
+
+.dynamic-txts li {
+  color: #FC6D6D;
+  list-style: none;
+  font-size: 44px;
+  font-weight: 500;
+  position: relative;
+  top: 0;
+  animation: slide 4s steps(4) infinite;
+  animation-delay: 3s;
+}
+
+@keyframes slide {
+  100%{
+    top: -360px;
+  }
+}
+
+.dynamic-txts li span {
+  position: relative;
+  margin: 5px 0;
+  line-height: 90px;
+}
+
+.dynamic-txts li span ::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  border-left: 2px solid #FC6D6D;
+  animation: typing 3s steps(10) infinite;
+}
+
+
+@keyframes typing {
+  40%, 60%{
+    left: calc(100% + 30px)
+  }
+  100%{
+    margin: 0;
+  }
+}
+
+
+@keyframes glow {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  100% {
+    filter: hue-rotate(360deg);
+  }
+}

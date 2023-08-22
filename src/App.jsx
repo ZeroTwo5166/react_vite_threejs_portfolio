@@ -28,7 +28,7 @@ function App() {
           <div className='bg-hero-pattern bg-cover
           bg-no-repeat bg-center'>
             <Navbar nyanStateToParent={handleNyanStateFromNavbar}/>
-            <Hero/>
+            <Hero lightUpName={nyanStateFromNavbar}/>
           </div>
           <About/>
           <Experience/>

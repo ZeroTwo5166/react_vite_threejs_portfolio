@@ -1,9 +1,22 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { motion } from 'framer-motion'
 import { styles } from '../styles'
 import { ComputersCanvas } from './canvas'
+import './Hero.css'
 
-const Hero = () => {
+const Hero = ({ lightUpName }) => {
+
+  const [checkedStatus, setCheckedStatus] = useState({
+    checkboxS: lightUpName,
+    checkboxU: lightUpName,
+    checkboxB: lightUpName,
+    checkboxA: lightUpName,
+    checkboxR: lightUpName,
+    checkboxN: lightUpName,
+    checkboxAA: lightUpName,
+  });
+
+
   return (
     <section className={`relative w-full h-screen mx-auto`}>
       <div
@@ -14,14 +27,61 @@ const Hero = () => {
           <div className='w-1 sm:h-80 h-40 violet-gradient' />
         </div>
 
-        <div>
-          <h1 className={`${styles.heroHeadText} text-white`}>
-            Hi, I'm <span className='text-[#915EFF]'>Subarna</span>
-          </h1>
-          <p className={`${styles.heroSubText} mt-2 text-white-100`}>
-            I develop user interfaces,<br className='sm:block hidden' />
-           websites and desktop applications
-          </p>
+        <div className='nameContainer'>
+          <h1 className={`${styles.heroHeadText} text-white`}>Hi, I am</h1>
+          <ul className='ulList'>
+            <li className='liList'>
+              <input type="checkbox"
+                checked={lightUpName ? lightUpName : checkedStatus.checkboxS}
+                onChange={() => setCheckedStatus({...checkedStatus, checkboxS:!checkboxS})}
+             />
+              <div className='letters'>S</div>
+            </li>
+            <li className='liList'>
+              <input type="checkbox"
+                checked={lightUpName ? lightUpName : checkedStatus.checkboxU}
+                onChange={() => setCheckedStatus({...checkedStatus, checkboxU:!checkboxU})}/>
+              <div className='letters'>U</div>
+            </li>
+            <li className='liList'>
+              <input type="checkbox"
+                checked={lightUpName ? lightUpName : checkedStatus.checkboxB}
+                onChange={() => setCheckedStatus({...checkedStatus, checkboxB:!checkboxB})}/>
+              <div className='letters'>B</div>
+            </li>
+            <li className='liList'>
+              <input type="checkbox"
+                checked={lightUpName ? lightUpName : checkedStatus.checkboxA}
+                onChange={() => setCheckedStatus({...checkedStatus, checkboxA:!checkboxA})}/>
+              <div className='letters'>A</div>
+            </li>
+            <li className='liList'>
+              <input type="checkbox"
+                checked={lightUpName ? lightUpName : checkedStatus.checkboxR}
+                onChange={() => setCheckedStatus({...checkedStatus, checkboxR:!checkboxR})}/>
+              <div className='letters'>R</div>
+            </li>
+            <li className='liList'>
+              <input type="checkbox"
+                checked={lightUpName ? lightUpName : checkedStatus.checkboxN}
+                onChange={() => setCheckedStatus({...checkedStatus, checkboxN:!checkboxN})}/>
+              <div className='letters'>N</div>
+            </li>
+            <li className='liList'>
+              <input type="checkbox"
+                checked={lightUpName ? lightUpName : checkedStatus.checkboxAA}
+                onChange={() => setCheckedStatus({...checkedStatus, checkboxAA:!checkboxAA})}/>
+              <div className='letters'>A</div>
+            </li>
+          </ul>
+          <div className= "wrapper">
+            <div className='static-txt'>I'm a </div>
+            <ul className='dynamic-txts'>
+              <li> <span>Student</span></li>
+              <li> <span>Software Developer</span></li>
+              <li> <span>Gamer</span></li>              
+            </ul>
+          </div>
         </div>
       </div>
 
