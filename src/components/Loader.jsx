@@ -29,7 +29,7 @@ const CanvasLoader = () => {
         }}
       >Loadingggggggggggggggggggggggggggggggggggg
       </p>
-      <img src={cat} alt='preloader' style={imgStyle}/>
+      {/* <img src={cat} alt='preloader' style={imgStyle}/> */}
     </Html>
   )
 }

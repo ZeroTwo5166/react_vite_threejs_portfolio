@@ -11,6 +11,14 @@ const Planet = () => {
   );
 };
 
+
+const Earth = () => {
+  const earth = useGLTF('./earth/scene.gltf')
+  return (
+    <primitive object={earth.scene} scale={2} position-y={0} rotation-y={0} />
+  );
+};
+
 const PlanetCanvas = () => {
   return (
     <Canvas
@@ -32,7 +40,7 @@ const PlanetCanvas = () => {
           maxPolarAngle={Math.PI / 2}
           minPolarAngle={Math.PI / 2}
         />
-        <Planet />
+        <Earth />
 
         <Preload all />
       </Suspense>

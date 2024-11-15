@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { BrowserRouter } from 'react-router-dom'
 import {About, Contact, Experience, Hero, Navbar, Tech, Works, StarsCanvas} from './components'
 import Gate from './components/Gate';
@@ -6,10 +6,24 @@ import CatBg from './components/CatBg';
 
 
 function App() {
+  const [isLoaded, setIsLoaded] = useState(false);
   const [showFirstComponent, setShowFirstComponent] = useState(true);
   const [showSecondComponent, setShowSecondComponent] = useState(false);
 
+  useEffect(() => {
+    // Check if the user has already seen the Gate component
+    const hasSeenGate = localStorage.getItem('hasSeenGate');
+    if (hasSeenGate) {
+      setShowFirstComponent(false);
+      setShowSecondComponent(true);
+    } else {
+      setShowFirstComponent(true);
+    }
+    setIsLoaded(true);
+  }, []);
+ 
   const handleFirstComponentDelete = () => {
+    localStorage.setItem('hasSeenGate', 'true');
     setShowFirstComponent(false);
     setShowSecondComponent(true);
   };
@@ -19,6 +33,12 @@ function App() {
   const handleNyanStateFromNavbar = nyanState => {
     setNyanStateFromNavbar(nyanState);
   }
+
+    // Render nothing until the state is loaded
+    if (!isLoaded) {
+      return null;
+    }
+  
 
   return (
    <div>
@@ -40,11 +60,9 @@ function App() {
           </div>
           <div>
             <CatBg nyanStateFromParent={nyanStateFromNavbar}/>
-
           </div>
         </div>
      </BrowserRouter>}
-
      
    </div>
   )
